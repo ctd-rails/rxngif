@@ -17,4 +17,26 @@ class PicturesController < ApplicationController
 
     redirect_to 'http://localhost:3000/pictures'
   end
+
+  def show
+    @p = Picture.find_by_id(params["id"])
+
+    render 'show'
+  end
+
+  def edit
+    @p = Picture.find_by_id(params["id"])
+
+    render 'edit'
+  end
+
+  def update
+    p = Picture.find_by_id(params["id"])
+    p.url = params["url"]
+    p.description = params["description"]
+    p.favorite = params["favorite"]
+    p.save
+
+    redirect_to "/pictures/#{p.id}"
+  end
 end

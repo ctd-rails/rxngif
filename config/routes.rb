@@ -3,4 +3,7 @@ Rxngif::Application.routes.draw do
   # a user can type in '/pictures' into the address bar
   # and see a list of pictures
   get "/pictures", { :controller => "pictures", :action => "index" }
+  get "/pictures/new", { :controller => "pictures", :action => "new"}
+
+  get "/pictures/create", { :controller => "pictures", :action => "create"}
 end

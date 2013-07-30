@@ -1,7 +1,12 @@
+<!-- Edit a picture's url and then remove the picture from the database -->
+
 <h1>List of Pictures</h1>
 
 <ul>
   <li>
     <img src="http://i0.kym-cdn.com/photos/images/newsfeed/000/260/393/a37.jpg" alt="">
   </li>
+  <% @pictures.each do |picture| %>
+    <li><img src="<%= picture.url %>" alt=""></li>
+  <% end %>
 </ul>

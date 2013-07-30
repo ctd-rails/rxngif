@@ -15,6 +15,9 @@ Rxngif::Application.routes.draw do
   get "/pictures/:id/edit", { :controller => "pictures", :action => "edit" }
   get "/pictures/:id/update", { :controller => "pictures", :action=> "update"}
 
+  # DESTROY
+  get "/pictures/:id/destroy", { :controller => "pictures", :action => "destroy"}
+
 
 
 

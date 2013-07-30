@@ -2,11 +2,11 @@
 
 <%= form_tag("/pictures/#{@p.id}/update", :method => "get") do %>
   Enter the picture's url:
-  <%= text_field_tag :url %>
+  <%= text_field_tag :url, @p.url %>
   Enter a description:
-  <%= text_field_tag :description %>
+  <%= text_field_tag :description, @p.description %>
   Favorite?
-  <%= check_box_tag :favorite %>
+  <%= check_box_tag :favorite, @p.favorite %>
 
   <%= submit_tag 'update picture' %>
 <% end %>

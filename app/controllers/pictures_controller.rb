@@ -39,4 +39,11 @@ class PicturesController < ApplicationController
 
     redirect_to "/pictures/#{p.id}"
   end
+
+  def destroy
+    p = Picture.find_by_id(params["id"])
+    p.destroy
+
+    redirect_to "/pictures"
+  end
 end

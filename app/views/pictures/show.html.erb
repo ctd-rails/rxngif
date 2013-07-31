@@ -1,7 +1,9 @@
 <h1>Picture #<%= @p.id %></h1>
 
-<img src="<%= @p.url %>" alt="">
+<%= image_tag @p.url %>
 
 <p><%= @p.description %></p>
 
-favorite: <%= @p.favorite %>
+<p>favorite: <%= @p.favorite %></p>
+
+<%= link_to "Back to list of pictures", pictures_path  %>

@@ -1,14 +1,14 @@
 <h1>List of Pictures</h1>
 
-<a href="/pictures/new">Add a new picture</a>
+<%= link_to "Add a new picture", new_picture_url %>
 
 <ul>
   <% @pictures.each do |picture| %>
     <li>
-      <img src="<%= picture.url %>" alt="">
-      <a href="/pictures/<%= picture.id %>">Show</a>
-      <a href="/pictures/<%= picture.id %>/edit">Edit</a>
-      <a href="/pictures/<%= picture.id %>/destroy">Destroy</a>
+      <%= image_tag picture.url %>
+      <%= link_to 'Show', picture_path(picture.id) %>
+      <%= link_to 'Edit', edit_picture_path(picture.id) %>
+      <%= link_to 'Destroy', destroy_picture_path(picture.id) %>
     </li>
   <% end %>
 </ul>

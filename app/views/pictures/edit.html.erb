@@ -1,6 +1,6 @@
 <h1>Edit picture #<%= @p.id %></h1>
 
-<%= form_tag("/pictures/#{@p.id}/update", :method => "get") do %>
+<%= form_tag(update_picture_path(@p.id), :method => "get") do %>
   Enter the picture's url:
   <%= text_field_tag :url, @p.url %>
   Enter a description:

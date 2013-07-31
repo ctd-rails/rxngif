@@ -3,9 +3,6 @@
 <a href="/pictures/new">Add a new picture</a>
 
 <ul>
-  <li>
-    <img src="http://i0.kym-cdn.com/photos/images/newsfeed/000/260/393/a37.jpg" alt="">
-  </li>
   <% @pictures.each do |picture| %>
     <li>
       <img src="<%= picture.url %>" alt="">

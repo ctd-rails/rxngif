@@ -10,17 +10,15 @@ class PicturesController < ApplicationController
   end
 
   def new
+    @p = Picture.new
+
     respond_to do |format|
       format.html
     end
   end
 
   def create
-    p = Picture.new
-    p.url = params["url"]
-    p.description = params["description"]
-    p.favorite = params["favorite"]
-    p.save
+    p = Picture.create(picture_params)
 
     respond_to do |format|
       format.html { redirect_to pictures_url }
@@ -46,10 +44,7 @@ class PicturesController < ApplicationController
 
   def update
     p = Picture.find_by_id(params["id"])
-    p.url = params["url"]
-    p.description = params["description"]
-    p.favorite = params["favorite"]
-    p.save
+    p.update_attributes(picture_params)
 
     respond_to do |format|
       format.html { redirect_to p }
@@ -64,4 +59,11 @@ class PicturesController < ApplicationController
       format.html { redirect_to pictures_url }
     end
   end
+
+  private
+
+  def picture_params
+    params.require(:picture).permit(:url, :description, :favorite)
+  end
+
 end

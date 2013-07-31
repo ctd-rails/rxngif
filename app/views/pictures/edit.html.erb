@@ -1,12 +1,13 @@
 <h1>Edit picture #<%= @p.id %></h1>
+<%= form_for(@p, :url => picture_path(@p.id), :method => 'put') do |f| %>
+  <%= f.label :url, "Enter the picture's url:" %>
+  <%= f.text_field :url %>
 
-<%= form_tag(picture_path(@p.id), :method => "put") do %>
-  Enter the picture's url:
-  <%= text_field_tag :url, @p.url %>
-  Enter a description:
-  <%= text_field_tag :description, @p.description %>
-  Favorite?
-  <%= check_box_tag :favorite, @p.favorite %>
+  <%= f.label :description, "Enter a description:" %>
+  <%= f.text_field :description %>
 
-  <%= submit_tag 'update picture' %>
+  <%= f.label :favorite, "Favorite?" %>
+  <%= f.check_box :favorite %>
+
+  <%= f.submit %>
 <% end %>

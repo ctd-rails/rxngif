@@ -5,24 +5,17 @@ Rxngif::Application.routes.draw do
 
   # CREATE
   get "/pictures/new", { :controller => "pictures", :action => "new", :as => :new_picture }
-  get "/pictures/create", { :controller => "pictures", :action => "create", :as => :create_picture}
+  post "/pictures", { :controller => "pictures", :action => "create", :as => :pictures}
 
   # READ
-  get "/pictures", { :controller => "pictures", :action => "index", :as => :pictures }
+  get "/pictures", { :controller => "pictures", :action => "index" }
   get "/pictures/:id", { :controller => "pictures", :action => "show", :as => :picture }
 
   # UPDATE
   get "/pictures/:id/edit", { :controller => "pictures", :action => "edit", :as => :edit_picture }
-  get "/pictures/:id/update", { :controller => "pictures", :action=> "update", :as => :update_picture }
+  put "/pictures/:id", { :controller => "pictures", :action=> "update" }
 
   # DESTROY
-  get "/pictures/:id/destroy", { :controller => "pictures", :action => "destroy", :as => :destroy_picture}
-
-
-
-
-
-
-
+  delete "/pictures/:id", { :controller => "pictures", :action => "destroy" }
 
 end

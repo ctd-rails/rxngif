@@ -1,6 +1,6 @@
 <h1>Add a new picture</h1>
 
-<%= form_tag(create_picture_path, :method => "get") do %>
+<%= form_tag(pictures_path) do %>
   Enter the picture's url:
   <%= text_field_tag :url %>
   Enter a description:
